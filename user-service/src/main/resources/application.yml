@@ -1,8 +1,9 @@
 server:
   port: 8101
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cloudstudy
-    username: root
-    password: mysql
+  cloud:
+    nacos:
+      discovery:
+        # 配置Nacos注册中心地址
+        server-addr: localhost:8848
+        namespace: 603b5562-5e3c-4905-bb52-c4a4bbf662a7
