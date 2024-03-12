@@ -2,13 +2,14 @@ server:
   port: 8201
 spring:
   application:
-    name: bookservice
+    name: book-service
   datasource:
     password: mysql
     username: root
     url: jdbc:mysql://localhost:3306/cloudstudy
-eureka:
-  client:
-    service-url:
-      # 将两个Eureka的地址都加入，这样就算有一个Eureka挂掉，也能完成注册
-      defaultZone: http://localhost:8801/eureka, http://localhost:8802/eureka
+  cloud:
+    nacos:
+      discovery:
+        # 配置Nacos注册中心地址
+        server-addr: localhost:8848
+        namespace: 603b5562-5e3c-4905-bb52-c4a4bbf662a7
